@@ -2,6 +2,7 @@ import unittest
 import task
 import random
 import math
+from datetime import date
 
 
 class TestCase(unittest.TestCase):
@@ -31,6 +32,11 @@ class TestCase(unittest.TestCase):
                 last = randomnum
             temp.append(randomnum)
         self.assertEqual((first, last), (task.first_last(temp)))
+
+    def test5(self):
+        day1 = date(2020, 3, 1)
+        day2 = date(2020, 5, 19)
+        self.assertEqual(day2 - day1, task.days_between(day1, day2))
 
 
 if __name__ == '__main__':
